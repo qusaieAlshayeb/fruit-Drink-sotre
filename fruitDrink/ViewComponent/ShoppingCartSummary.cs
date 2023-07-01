@@ -1,0 +1,35 @@
+﻿
+using fruitDrink.Models;
+using fruitDrink.ViewModel;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace fruitDrink.Components
+{
+    public class ShoppingCartSummary : ViewComponent
+    {
+        private readonly ShoppingCart _shoppingCart;
+        public ShoppingCartSummary(ShoppingCart shoppingCart)
+        {
+            _shoppingCart = shoppingCart;
+        }
+
+        public IViewComponentResult Invoke()
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+            _shoppingCart.ShoppingCartItems = items;
+
+            var shoppingCartViewModel = new ShoppingCartViewModel
+            {
+                ShoppingCart = _shoppingCart,
+                shoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
+            };
+            return View(shoppingCartViewModel);
+        }
+
+
+    }
+}

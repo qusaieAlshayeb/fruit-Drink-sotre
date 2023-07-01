@@ -1,0 +1,66 @@
+﻿@model Drink
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Drink</title>
+    <link href="~/lib/stylesheet/createnewdrinkanimation.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Drink</h2>
+        <form asp-action="AddDrinks">
+
+
+            <div class="form-group text-center">
+                <img id="drinkurl">
+
+            </div>
+            <div asp-validation-summary="All"></div>
+
+            <label asp-for="@Model.ImageUrl" for="name">image drink </label>
+            <input asp-for="@Model.ImageUrl">
+            <span asp-validation-for="@Model.ImageUrl" class="text-danger"> </span>
+
+            <label asp-for="@Model.ImageDrinkUrl" for="name">image drink </label>
+            <input asp-for="@Model.ImageDrinkUrl">
+            <span asp-validation-for="@Model.ImageDrinkUrl" class="text-danger"> </span>
+
+
+            <label asp-for="@Model.Name" for="name">Name:</label>
+            <input asp-for="@Model.Name" type="text">
+            <span asp-validation-for="@Model.Name" class="text-danger"> </span>
+
+
+
+
+            <label asp-for="@Model.price" for="price">price:</label>
+            <input asp-for="@Model.price" type="text" id="price" name="price">
+            <span asp-validation-for="@Model.price" class="text-danger"></span>
+
+            <label asp-for="@Model.shortDescription">Description:</label>
+            <textarea asp-for="@Model.shortDescription" rows="4"></textarea>
+            <span asp-validation-for="@Model.shortDescription" class="text-danger"> </span>
+
+
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+        $(document).ready(function () {
+            var output = document.getElementById('drinkurl');
+            output.src = $("#ImageDrinkUrl").val();
+        })
+
+        $("#ProfilePictureURL").on("change", function () {
+            var output = document.getElementById('drinkurl');
+            output.src = $(this).val();
+        })
+</script>

@@ -1,0 +1,126 @@
+﻿/* Navbar styles */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  
+    animation: navbar-animation 2s infinite alternate;
+}
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar li {
+        float: left;
+    }
+
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            .navbar li a:hover {
+                background-color: #111;
+            }
+
+    /* Dropdown styles */
+    .navbar .dropdown:hover .dropdown-content {
+        display: block;
+        animation: dropdown-in-animation 0.5s ease-in;
+    }
+
+    .navbar .dropdown-content {
+        display: none;
+        position: fixed;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        animation: dropdown-out-animation 0.5s ease-out;
+    }
+
+        .navbar .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+        }
+
+            .navbar .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+
+
+div.idk {
+    height: 75px;
+    position: relative;
+    overflow-y: visible;
+    z-index: 999;
+}
+
+
+/* Animations */
+@keyframes navbar-animation {
+    0% {
+        background-color: #333;
+    }
+
+    50% {
+        background-color: #666;
+    }
+
+    100% {
+        background-color: #333;
+    }
+}
+
+@keyframes dropdown-in-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdown-out-animation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+ 
+body {
+    background-image: linear-gradient(to bottom, #fd5d1d, #ffaf00);
+    animation: background-animation 5s infinite alternate;
+}
+
+@keyframes background-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}

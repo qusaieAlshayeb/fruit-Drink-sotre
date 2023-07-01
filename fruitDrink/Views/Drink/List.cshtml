@@ -1,0 +1,53 @@
+﻿@using fruitDrink.Models
+@model DrinkListViewModel 
+
+
+
+<div class="container">
+    <div class="row ">
+
+       
+        <div class="row">
+
+
+            <h2>Drinks</h2>
+
+            <div>
+
+                <div class="accordion-button">
+                    <a class="btn btn-outline-primary" id="cartButton" asp-controller="Drink" asp-action="AddDrinks">
+
+                        Add new drink
+                    </a>
+       
+          
+            
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="row marginTop">
+            @foreach (Drink drink in Model.Drinks)
+            {
+                @Html.Partial("DrinkSummery", drink)
+            }
+
+
+
+        </div>
+
+    </div>
+</div>

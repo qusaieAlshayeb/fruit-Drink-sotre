@@ -1,0 +1,128 @@
+﻿body {
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    overflow: hidden;
+    animation: colorMove 15s ease-in-out infinite alternate;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes colorMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+
+
+
+
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+    .fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .slideIn {
+        animation: slideIn 0.5s ease-in-out;
+    }
+}
+
+
+.rain {
+    position: fixed;
+    top: -50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+    .rain:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.5) 100%);
+        pointer-events: none;
+        animation: raindrop 2s linear infinite;
+    }
+
+@keyframes raindrop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}

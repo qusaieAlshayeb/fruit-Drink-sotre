@@ -1,0 +1,33 @@
+﻿@model LoginViewModel
+<html>
+<head>
+    <title>Login Form</title>
+    <link href="~/lib/stylesheet/LoginAnimation.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="rain"></div>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form" method="post" asp-controller="Account" asp-action="Login">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="input-group">
+                <input type="email" placeholder="Email" asp-for="@Model.Email">
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" asp-for="password">
+                <span asp-validation-for="@Model.password" class="text-danger"></span>
+            </div>
+            <label asp-for="@Model.RememberMe" for="remember-me">
+                <input asp-for="@Model.RememberMe">@Html.DisplayNameFor(m => m.RememberMe)
+            </label>
+
+            <div class="input-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    @*<script src="~/lib/javascript/JavaScript.js"></script>*@
+</body>
+</html>

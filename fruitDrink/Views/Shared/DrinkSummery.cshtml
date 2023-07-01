@@ -1,0 +1,31 @@
+﻿@model Drink
+
+
+<div class="col-md-6 col-lg-4 d-flex mb-4">
+   
+    <div class=" card img-fluid   ">
+        <img src="@Model.ImageDrinkUrl" alt="" />
+        <div class="figure-caption">
+            <h3 class="pull-right">@Model.price.ToString("c")</h3>
+            <h3>
+                <a asp-controller="Drink" asp-action="Details" asp-route-drinkId="@Model.DrinkId">@Model.Name</a>
+            </h3>
+            <p>@Model.shortDescription</p>
+        </div>
+
+       
+
+        <div class="addToCart text-right">
+            <p class="button ">
+                <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-drinkId="@Model.DrinkId">
+                    Add to cart
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+
+        

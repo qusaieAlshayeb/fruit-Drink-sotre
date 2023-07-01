@@ -1,0 +1,51 @@
+﻿@model RegisterViewModel
+    <html>
+
+
+
+        <head>
+
+            <title>Registration Page</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <link href="~/lib/stylesheet/RegisterAnimation.css" rel="stylesheet" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        </head>
+
+
+    <body>
+
+      
+            
+
+                <div class="container">
+                    <form class="animated-form"  method="POST">
+
+                        <h2>Registration Form</h2>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        
+                        <label asp-for="Email"></label>
+                        <input type="email" asp-for="Email" name="email" placeholder="Email" >
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" type="password" name="password" placeholder="Password" >
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        
+                        <label asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword"  name="Confirm password" placeholder="Confirm password">
+                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        
+                        <input type="submit" value="Register">
+                    </form>
+                </div>
+
+     
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+   
+
+
+</html>

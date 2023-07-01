@@ -1,0 +1,23 @@
+﻿/* CSS */
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: 200px
+}

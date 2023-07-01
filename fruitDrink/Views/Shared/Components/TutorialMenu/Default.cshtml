@@ -1,0 +1,37 @@
+﻿<li class="dropdown">
+    <a href="#">Dropdown</a>
+
+    <div class="dropdown-content">
+
+
+
+        @foreach (var category in Model)
+        {
+            <a asp-controller="Drink" asp-action="List"
+               asp-route-category="@category.categoryname">@category.categoryname</a>
+
+
+        }
+
+
+
+
+        <a asp-controller="Drink" asp-action="List">All Drinks</a>
+
+
+
+    </div>
+
+        
+
+   
+   
+
+</li>
+
+     
+
+
+
+    
+    

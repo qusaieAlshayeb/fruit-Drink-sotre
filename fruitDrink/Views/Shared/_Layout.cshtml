@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <link href="~/lib/stylesheet/StyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <title>@ViewBag.Title</title>
+</head>
+
+
+<body>
+
+    <div class="navbar  navbar-expand-md">
+        <ul>
+
+
+
+
+            @await Component.InvokeAsync("ShoppingCartSummary")
+            <li class="justify-content-end"><a asp-controller="Home" asp-action="Index">Home</a></li>
+
+
+            @await Component.InvokeAsync("TutorialMenu")
+
+
+
+            <li><a asp-controller="Contact" asp-action="Index" style="float:right">Email us</a></li>
+
+        </ul>
+
+
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+            <ul class="navbar-nav ">
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                <li class="nav-item">
+                    <form method="post" asp-controller="Account" asp-action="LogOut">
+                        <button type="submit" style="width:auto" class="nav-link btn btn-link py-0">
+                            LogOut @User.Identity.Name
+                        </button>
+                    </form>
+                 </li>
+                }
+                else
+                {
+
+                <li><a  asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+                }
+            </ul>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+   
+
+
+
+
+</body>
+</html>
+
+<div>
+    @RenderBody()
+    <vc:rest-count></vc:rest-count>
+</div>
+
+
